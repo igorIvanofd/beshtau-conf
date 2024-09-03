@@ -1,0 +1,15 @@
+databaseChangeLog:
+  - changeSet:
+      id: create.table.beshtau
+      author: igivanov
+      failOnError: true
+      validCheckSum: ANY
+      changes:
+        - sqlFile: { dbms: 'h2, postgresql', path: sql/create.table.beshtau_data.sql }
+  - changeSet:
+      id: create.table.users
+      author: igivanov
+      failOnError: true
+      validCheckSum: ANY
+      changes:
+        - sqlFile: { dbms: 'h2, postgresql', path: sql/create.table.users.sql }
