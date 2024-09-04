@@ -1,17 +1,13 @@
 package com.terra.beshtau.conf;
 
-import com.terra.beshtau.conf.data.SamplePersonRepository;
 import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.page.AppShellConfigurator;
+import com.vaadin.flow.server.AppShellSettings;
 import com.vaadin.flow.theme.Theme;
-import javax.sql.DataSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.sql.init.SqlDataSourceScriptDatabaseInitializer;
-import org.springframework.boot.autoconfigure.sql.init.SqlInitializationProperties;
 import org.springframework.boot.autoconfigure.web.servlet.error.ErrorMvcAutoConfiguration;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.Bean;
 
 /**
  * The entry point of the Spring Boot application.
@@ -24,6 +20,12 @@ import org.springframework.context.annotation.Bean;
 @Theme(value = "bishtau-conf")
 @NpmPackage(value = "lumo-css-framework", version = "^4.0.10")
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
+
+    @Override
+    public void configurePage(AppShellSettings settings) {
+        settings.setPageTitle("");
+        settings.addFavIcon("icon", "icons/favicon_brow.ico", "64x64");
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);

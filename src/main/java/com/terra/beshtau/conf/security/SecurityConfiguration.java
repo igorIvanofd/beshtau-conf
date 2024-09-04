@@ -27,8 +27,8 @@ public class SecurityConfiguration extends VaadinWebSecurity {
     protected void configure(HttpSecurity http) throws Exception {
         super.configure(http);
         setLoginView(http, LoginView.class);
-
     }
+
 
     @Bean
     public UserDetailsService users() {

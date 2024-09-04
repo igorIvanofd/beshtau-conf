@@ -2,9 +2,8 @@ package com.terra.beshtau.conf.services;
 
 import com.terra.beshtau.conf.data.BeshtauEntity;
 import com.terra.beshtau.conf.data.BeshtauRepository;
-import com.terra.beshtau.conf.data.SamplePersonRepository;
-import com.terra.beshtau.conf.data.SamplePerson;
 
+import java.util.List;
 import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -38,6 +37,10 @@ public class BeshtauService {
 
     public Page<BeshtauEntity> list(Pageable pageable, Specification<BeshtauEntity> filter) {
         return repository.findAll(filter, pageable);
+    }
+
+    public List<BeshtauEntity> findAll() {
+        return repository.findAll();
     }
 
     public int count() {
